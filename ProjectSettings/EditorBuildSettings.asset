@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ARPlanes.unity
     guid: 778910bd2f84805408cec3dca89c8aaf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARImages.unity
     guid: 3d61542acebbcc44299276d0177763f6
+  - enabled: 1
+    path: Assets/Scenes/ARColourtest.unity
+    guid: e60d851394ec7514d85fd2834c6c667e
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
