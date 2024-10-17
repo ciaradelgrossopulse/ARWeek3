@@ -14,14 +14,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ARImages.unity
     guid: 3d61542acebbcc44299276d0177763f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARColourtest.unity
     guid: e60d851394ec7514d85fd2834c6c667e
+  - enabled: 1
+    path: Assets/Scenes/ARAnchors.unity
+    guid: 481094712fa47ea428c6951a536a3368
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 0465d33c6aee55f44b0237db8b0e0259,
       type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 47e77546e12e64649b6307770f860776,
+      type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: c199e683398494f32b4cde18e73ab731,
       type: 2}
     com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 0b53a025a635a4393ba0b49822242280,
