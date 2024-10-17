@@ -8,6 +8,7 @@ using UnityEngine.XR.ARFoundation;
 [RequireComponent(typeof(ARAnchorManager))] // Add the ARAnchorManager requirement
 public class ARAnchorCreator : MonoBehaviour
 {
+    public bool placingMode = true;
     ARRaycastManager aRRaycastManager;
     ARAnchorManager aRAnchorManager;
 
@@ -28,25 +29,33 @@ public class ARAnchorCreator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!TryGetTouchPosition(out Vector2 touchPosition))
+        if (placingMode)
         {
-            return;
-        }
+            if (!TryGetTouchPosition(out Vector2 touchPosition))
+            {
+                return;
+            }
 
-        // Perform a raycast from the touch position
-        if (aRRaycastManager.Raycast(touchPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
-        {      Debug.Log("Object placed and anchored");
-            var hitPose = hits[0].pose;
-            Vector3 position = hitPose.position;
-            Quaternion rotation = hitPose.rotation;
+            // Perform a raycast from the touch position
+            if (aRRaycastManager.Raycast(touchPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
+            {
+                Debug.Log("Object placed and anchored");
+                var hitPose = hits[0].pose;
+                Vector3 position = hitPose.position;
+                Quaternion rotation = hitPose.rotation;
 
-            // Instantiate the object at the anchor's position and parent it to the anchor
-           
+                // Instantiate the object at the anchor's position and parent it to the anchor
+
                 placedObj = Instantiate(gameObjectToCreate, position, rotation);
-            placedObj.AddComponent<ARAnchor>();
+                placedObj.AddComponent<ARAnchor>();
                 Debug.Log("Object placed and anchored");
 
-           
+
+            }
+        }
+        else
+        {
+            ///do something like selecting invisible objects.
         }
     }
 
@@ -63,6 +72,11 @@ public class ARAnchorCreator : MonoBehaviour
 
         touchPosition = default;
         return false;
+    }
+
+    public void SwitchMode()
+    {
+        placingMode = !placingMode;
     }
 }
 
