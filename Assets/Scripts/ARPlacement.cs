@@ -10,7 +10,7 @@ public class ARPlacement : MonoBehaviour
     ARRaycastManager aRRaycastManager;
     [SerializeField]
     private GameObject gameObjectToCreate;
-    public Material mat;
+  
 
     private GameObject placedObj;
 
@@ -48,7 +48,7 @@ public class ARPlacement : MonoBehaviour
                 if (placedObj == null)
                 {
                     placedObj = Instantiate(gameObjectToCreate, hitPose.position, hitPose.rotation);
-               //     Material tempMat = placedObj.GetComponent<MeshRenderer>().material = new Material (mat);
+              
                     
                     Debug.Log("debug created an object " + hitPose.position);
                 }
