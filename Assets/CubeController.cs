@@ -20,6 +20,18 @@ public class CubeController : MonoBehaviour
 
     private void Start()
     {
+        if (UnityEngine.InputSystem.Gyroscope.current != null)
+        {
+            InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
+        }
+        if (AttitudeSensor.current != null)
+        {
+            InputSystem.EnableDevice(AttitudeSensor.current);
+        }
+        if (Accelerometer.current != null)
+        {
+            InputSystem.EnableDevice(Accelerometer.current);
+        }
         //cubeTransform = transform;
 
         // Enable the input actions
@@ -43,10 +55,9 @@ public class CubeController : MonoBehaviour
 
         // Move the cube in the direction of its forward vector (based on rotation)
         cubeTransform.Translate(moveDirection * Time.deltaTime, Space.World);
-        if (accelInput != Vector3.zero)
-        {
-            Debug.Log(accelInput);
-        }
+       
+       
+        
     }
 
     private void OnDisable()
