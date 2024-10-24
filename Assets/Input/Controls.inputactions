@@ -2,17 +2,17 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "Controls",
+            "name": "Default",
             "id": "196146f2-c8fe-40e7-acc9-d147a8334f6a",
             "actions": [
                 {
                     "name": "Interact",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "ce0f3144-ebe0-4dd7-876f-6af827993f79",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
@@ -24,13 +24,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "21ae31d5-9b20-496e-b90d-17bdc74e35c2",
-                    "expectedControlType": "",
+                    "name": "Accelerator",
+                    "type": "Value",
+                    "id": "7ccad20c-8cb1-4e07-8359-8b16b0f44f22",
+                    "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Gyro",
+                    "type": "Value",
+                    "id": "8910f2fb-a1cd-42ee-961f-4ce630fb37fa",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -57,37 +66,26 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "020f7aa6-70b1-41f1-a585-e9412dfcae26",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "5f00794f-964b-49ef-a7c1-f08e7f320249",
+                    "path": "<Accelerometer>/acceleration",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
-                    "isComposite": true,
+                    "action": "Accelerator",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "b961cdcc-a560-4f31-8cc8-b971057e8181",
-                    "path": "",
+                    "name": "",
+                    "id": "fde1f354-7fea-436c-a886-330e352588fe",
+                    "path": "<AttitudeSensor>/attitude",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Gyro",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "2da2895f-4768-413b-b61b-a31b05ad7e44",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         },

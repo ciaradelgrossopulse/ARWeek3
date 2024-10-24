@@ -20,9 +20,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ARAnchors.unity
     guid: 481094712fa47ea428c6951a536a3368
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARChangeColour.unity
     guid: 08348dc4144463d4a8efa5cb38d819f2
+  - enabled: 1
+    path: Assets/Scenes/Accelerometer.unity
+    guid: 755c0e1799a0166448a5934eeadd04d8
+  - enabled: 0
+    path: Assets/Scenes/Microphone.unity
+    guid: 4c327f7228642a04290107d2eafa3bd5
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
